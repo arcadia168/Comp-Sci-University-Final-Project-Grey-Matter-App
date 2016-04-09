@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Invite Carer</h1>
+  </ion-header-bar>
+  <ion-content>
+    <form name="inviteCarerForm" novalidate="" ng-submit="inviteCarer(inviteCarerForm)">
+      <ion-list>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : inviteCarerForm.carerEmail.$invalid, 'no-errors' : inviteCarerForm.carerEmail.$valid}">
+          <span class="input-label">Carer Email:</span>
+          <input type="email" ng-model="inviteEmail.email" name="carerEmail" required placeholder="Required">
+        </label>
+      </ion-list>
+      <div class="padding">
+        <button class="button button-block button-calm" type="submit">
+          Send Invite
+        </button>
+        <button type="button" class="button button-block button-positive" ng-click="finishInvitations()">
+          Done
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

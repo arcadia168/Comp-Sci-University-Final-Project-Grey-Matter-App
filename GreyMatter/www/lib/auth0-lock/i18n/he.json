@@ -1,0 +1,51 @@
+{
+  "loadingTitle": "חכה בבקשה...",
+  "close": "סגור",
+  "noConnectionError": "יכול להיות, לא מצא קשר תקף.",
+  "signin": {
+    "title": "כניסה",
+    "action": "היכנס",
+    "all": "הצג הכל",
+    "strategyEmailEmpty": "הדוא\"ל ריק.",
+    "strategyEmailInvalid": "הדוא ל אינו חוקי.",
+    "strategyDomainInvalid": "התחום {domain} אינו מאושר.",
+    "signinText": "היכנס",
+    "signupText": "הירשם",
+    "forgotText": "שכחת הסיסמא?",
+    "emailPlaceholder": "דוא\"ל",
+    "usernamePlaceholder": "שם משתמש",
+    "passwordPlaceholder": "סיסמא",
+    "separatorText": "או",
+    "serverErrorText": "אירעה שגיאה בעיבוד הכניסה.",
+    "returnUserLabel": "בפעם האחרונה נכנסת באמצעות...",
+    "wrongEmailPasswordErrorText": "דוא\"ל או סיסמא שגויים",
+    "or": ". או כניסה באמצעות",
+    "loadingMessage": "כניסה עם {connection}..."
+  },
+  "signup": {
+    "description": "",
+    "title": "הירשם",
+    "action": "הירשם",
+    "signinText": "היכנס",
+    "signupText": "הירשם",
+    "emailPlaceholder": "דוא\"ל",
+    "passwordPlaceholder": "סיסמא",
+    "cancelAction": "ביטול",
+    "headerText": "הזינו את כתובת המייל והסיסמא",
+    "footerText": "",
+    "signupOnSSODomainErrorText": "תחום זה, {domain} נקבעה עבור כניסה יחידה, אין באפשרותך ליצור חשבון. נסה להיכנס במקום.",
+    "serverErrorText": "אירעה שגיאה בעיבוד את השלט למעלה."
+  },
+  "reset": {
+    "title": "איפוס סיסמא",
+    "action": "שלח",
+    "emailPlaceholder": "דוא\"ל",
+    "passwordPlaceholder": "סיסמא חדשה",
+    "repeatPasswordPlaceholder": "אשר סיסמא חדשה",
+    "cancelAction": "ביטול",
+    "successText": "נשלחה לכתובת הדוא\"ל שלך הודעה לאיפוס הסיסמא",
+    "enterSamePasswordText": "הזינו בבקשה את אותה סיסמה.",
+    "headerText": "אנא הזן את הדואר האלקטרוני שלך ואת הסיסמה החדשה. אנו נשלח לך הודעת דואר אלקטרוני כדי לאשר את שינוי הסיסמה.",
+    "serverErrorText": "אירעה שגיאה בעיבוד איפוס הסיסמה."
+  }
+}

@@ -1,0 +1,68 @@
+<ion-view view-title="Profile">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshUserData()"></ion-refresher>
+    <div class="user-pic-container padding row row-center">
+      <img ng-if="user.pic != null" ng-click="chooseProfilePic()" class="user-pic col col-33 col-offset-33"
+           ng-src="{{server + user.pic}}">
+    </div>
+    <ul class="list">
+      <li class="item" ng-if="user.email">
+        Email Address: {{user.email}}
+      </li>
+      <li class="item" ng-if="user.firstName && user.lastName">
+        Name: {{user.firstName}} {{user.lastName}}
+      </li>
+      <li ng-if="user.dateOfBirth" class="item item-input">
+        D.O.B: {{user.dateOfBirth}}
+      </li>
+      <li ng-if="user.spouse" class="item">
+        Spouse: {{user.spouse}}
+      </li>
+      <li ng-if="user.maritalStatus" class="item">
+        Marital Status: {{user.maritalStatus}}
+      </li>
+      <li ng-if="user.children.length > 0" class="item">
+        Children: {{user.children}}
+      </li>
+      <li ng-if="user.homeAddress" class="item item-divider">
+        Address
+      </li>
+      <li ng-if="user.homeAddress" class="item">
+        House Name/No. : {{user.homeAddress.houseNameNo}}
+      </li>
+      <li ng-if="user.homeAddress" class="item">
+        Address Line 1: {{user.homeAddress.firstLineAddress}}
+      </li>
+      <li ng-if="user.homeAddress && user.homeAddress.secondLineAddress" class="item">
+        Address Line 2: {{user.homeAddress.secondLineAddress}}
+      </li>
+      <li ng-if="user.homeAddress" class="item">
+        City: {{user.homeAddress.city}}
+      </li>
+      <li ng-if="user.homeAddress" class="item">
+        Post Code: {{user.homeAddress.postCode}}
+      </li>
+      <li ng-if="user.homeAddress" class="item">
+        Country: {{user.homeAddress.country}}
+      </li>
+      <div ng-if="user.userType == 'carer' && user.connectedPatient" class="item item-divider"> Connected Patient</div>
+      <a ng-if="user.userType == 'carer' && user.connectedPatient" class="item item-avatar item-icon-right" href="#/tab/profile/patient-overview">
+        <img ng-if="connectedPatient.pic != null" class="user-pic col col-33"
+             ng-src="{{server + connectedPatient.pic}}">
+        <h2>{{connectedPatient.firstName}} {{connectedPatient.lastName}}</h2>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+    </ul>
+    <div class="padding">
+      <button class="button button-block button-calm" ng-if="user.userType == 'carer' && connectedPatient != null" ng-click="disconnectFromPatient()">
+        Disconnect from Patient
+      </button>
+      <button class="button button-block button-calm" ng-if="user.userType == 'patient'" ng-click="goToCarerConnect()">
+        Invite Carers
+      </button>
+      <button class="button button-block button-assertive" ng-click="signOut()">
+        Sign Out
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

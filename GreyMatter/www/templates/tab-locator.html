@@ -1,0 +1,16 @@
+<ion-view cache-view="false" view-title="Locator">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-android-more-vertical" ng-click="mapOptions()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <button ng-show="showRoute" class="custom-map-btn clear-route button icon button-icon ion-ios-close-outline"
+            ng-click="clearRoute()">
+    </button>
+    <div id="map" class='map-container' ng-class="{'show-route': showRoute}" data-tap-disabled="true">
+      <!--Google map will be injected here -->
+    </div>
+    <div id="directionsPanel">
+      <!-- Google maps route info will be injected into here -->
+    </div>
+  </ion-content>
+</ion-view>

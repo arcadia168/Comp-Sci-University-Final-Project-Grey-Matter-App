@@ -1,0 +1,33 @@
+<ion-view cache-view="false" view-title="{{viewTitle}}">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear button-icon" ng-click="addNewThing()">
+      <i class="icon ion-ios-plus-outline"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-refresher pulling-text="Pull to refresh things..." on-refresh="refreshThingData()"></ion-refresher>
+    <div ng-repeat="thing in currentThings track by $index" class="list card">
+      <div class="item">
+        <h2>{{thing.name}}</h2>
+        <p>{{thing.location}}</p>
+      </div>
+
+      <div ng-if="thing.pic && thing.pic.location" class="item item-image">
+        <img ng-src="{{server + '/uploads/' +  thing.pic.uploadedFileName}}">
+      </div>
+
+      <div class="item">
+        <p>{{thing.note}}</p>
+      </div>
+
+      <div class="item no-padding">
+        <button class="col-25 button-clear button button-positive" ng-click="editExistingThing($index)">
+          Edit
+        </button>
+        <button class="col-offset-67 col-20 button-clear button button-assertive" ng-click="deleteThing(thing._id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view view-title="Patient Profile Overview">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshPatientData()"></ion-refresher>
+    <div class="patient-pic-container padding row row-center">
+      <img ng-if="patient.pic != null" class="user-pic col col-33 col-offset-33" ng-src="{{server + patient.pic}}">
+    </div>
+    <ul class="list">
+
+      <li class="item" ng-if="patient.email">
+        Email Address: {{patient.email}}
+      </li>
+
+      <li class="item" ng-if="patient.firstName && patient.lastName">
+        Name: {{patient.firstName}} {{patient.lastName}}
+      </li>
+
+      <li ng-if="patient.dateOfBirth" class="item item-input">
+        D.O.B: {{patient.dateOfBirth}}
+      </li>
+
+      <li ng-if="patient.spouse" class="item">
+        Spouse: {{patient.spouse}}
+      </li>
+
+      <li ng-if="patient.maritalStatus" class="item">
+        Marital Status: {{patient.maritalStatus}}
+      </li>
+
+      <li ng-if="patient.children.length > 0" class="item">
+        Children: {{patient.children}}
+      </li>
+
+      <li ng-repeat="child in patient.children" ng-if="child" class="item item-avatar item-icon-right">
+        <img ng-if="child.picture" src="child.picture">
+        <h2>{{child.name}}</h2>
+        <p>Age: {{getAgeFromDateOfBirth(child.dateOfBirth)}} Relation: {{child.relation}}</p>
+      </li>
+
+      <li ng-if="patient.homeAddress" class="item item-divider">
+        Address
+      </li>
+      <li ng-if="patient.homeAddress" class="item">
+        House Name/No. : {{patient.homeAddress.houseNameNo}}
+      </li>
+      <li ng-if="patient.homeAddress" class="item">
+        Address Line 1: {{patient.homeAddress.firstLineAddress}}
+      </li>
+      <li ng-if="patient.homeAddress && patient.homeAddress.secondLineAddress" class="item">
+        Address Line 2: {{patient.homeAddress.secondLineAddress}}
+      </li>
+      <li ng-if="patient.homeAddress" class="item">
+        City: {{patient.homeAddress.city}}
+      </li>
+      <li ng-if="patient.homeAddress" class="item">
+        Post Code: {{patient.homeAddress.postCode}}
+      </li>
+      <li ng-if="patient.homeAddress" class="item">
+        Country: {{patient.homeAddress.country}}
+      </li>
+
+      <!-- if the patient has listed thier address, show it here! -->
+
+      <li ng-if="otherCarerUsersExist" class="item item-divider">
+          Other Carer Users
+      </li>
+
+      <a ng-if="carer.user_id != user.user_id" ng-repeat="carer in patient.connectedCarers track by $index" class="item item-avatar item-icon-right">
+        <img ng-src="{{carer.carer_pic}}">
+        <h2>{{carer.carer_name}}</h2>
+      </a>
+
+    </ul>
+    <button class="button button-block button-calm" ng-if="patient.patientType == 'carer' && connectedPatient != null" ng-click="disconnectFromPatient()">
+      Disconnect from Patient
+    </button>
+  </ion-content>
+</ion-view>

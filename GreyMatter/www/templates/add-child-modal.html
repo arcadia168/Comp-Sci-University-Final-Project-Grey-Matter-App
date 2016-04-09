@@ -1,0 +1,41 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Child Details</h1>
+  </ion-header-bar>
+  <ion-content padding="true">
+    <form name="addChildDetailsForm" novalidate="" ng-submit="closeModal(addChildDetailsForm)">
+      <!--<div class="user-pic-container padding row row-center">-->
+      <!--<img ng-if="newChild.picture != null" class="user-pic col col-33 col-offset-33" ng-src="{{newChild.pic}}">-->
+      <!--<span ng-click="chooseChildPicture()">Choose Picture</span>-->
+      <!--</div>-->
+      <div class="list">
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addChildDetailsForm.name.$invalid, 'no-errors' : addChildDetailsForm.name.$valid}">
+          <span class="input-label">Name</span>
+          <input type="text" name="name" ng-model="newChild.name" required>
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addChildDetailsForm.dOB.$invalid, 'no-errors' : addChildDetailsForm.dOB.$valid}">
+          <span class="input-label">Date Of Birth</span>
+          <input type="date" name="dOB" ng-model="newChild.dateOfBirth" ngMax="yesterday" required>
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addChildDetailsForm.relation.$invalid, 'no-errors' : addChildDetailsForm.relation.$valid}">
+          <select name="relation" ng-model="newChild.relation" required>
+            <option value="son">Son</option>
+            <option value="daughter">Daughter</option>
+          </select>
+        </label>
+
+      </div>
+      <button class="button button-block button-positive" type="submit">
+        Save Child Details
+      </button>
+      <button class="button button-block button-assertive" ng-click="cancelAddEditChild()">
+        Cancel
+      </button>
+    </form>
+  </ion-content>
+</ion-modal-view>

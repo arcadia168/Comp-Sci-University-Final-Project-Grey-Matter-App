@@ -1,0 +1,115 @@
+<ion-view view-title="Enter Patient Details">
+  <ion-content>
+    <form name="addNewPatientDetailsForm" novalidate="" ng-submit="updatePatientDetails(addNewPatientDetailsForm)">
+      <ion-list>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.firstName.$invalid, 'no-errors' : addNewPatientDetailsForm.firstName.$valid}">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="newUserData.firstName" name="firstName" required placeholder="Required">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.lastName.$invalid, 'no-errors' : addNewPatientDetailsForm.lastName.$valid}">
+          <span class="input-label">Last Name</span>
+          <input type="text" name="lastName" ng-model="newUserData.lastName" required placeholder="Required">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Spouse's Name</span>
+          <input type="text" name="spouseName" ng-model="newUserData.spouse"
+                 placeholder="Optional">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.dOB.$invalid, 'no-errors' : addNewPatientDetailsForm.dOB.$valid}">
+          <span class="input-label">Date Of Birth</span>
+          <input type="date" name="dOB" ng-model="dateOfBirth" required placeholder="Required" ngMax="maxPatientDob">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.maritalStatus.$invalid, 'no-errors' : addNewPatientDetailsForm.maritalStatus.$valid}">
+          <span class="input-label">Marital Status</span>
+          <select name="maritalStatus" ng-model="newUserData.maritalStatus" required>
+            <option value="Single">Single</option>
+            <option value="Living with partner">Living with partner</option>
+            <option value="Married">Married</option>
+            <option value="Separated">Separated</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+        </label>
+
+        <div class="item item-divider">
+          Home Address
+        </div>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.homeAddressHouseNo.$invalid, 'no-errors' : addNewPatientDetailsForm.homeAddressHouseNo.$valid}">
+          <span class="input-label">House Name/No.</span>
+          <input type="text" name="homeAddressHouseNo" ng-model="newUserData.homeAddress.houseNameNo" required
+                 placeholder="Required">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.homeAddressLine1.$invalid, 'no-errors' : addNewPatientDetailsForm.homeAddressLine1.$valid}">
+          <span class="input-label">Address Line 1</span>
+          <input type="text" name="homeAddressLine1" ng-model="newUserData.homeAddress.firstLineAddress" required
+                 placeholder="Required">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Address Line 2</span>
+          <input type="text" name="homeAddressLine2" ng-model="newUserData.homeAddress.secondLineAddress">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.homeAddressCity.$invalid, 'no-errors' : addNewPatientDetailsForm.homeAddressCity.$valid}">
+          <span class="input-label">City</span>
+          <input type="text" name="homeAddressCity" ng-model="newUserData.homeAddress.city" required
+                 placeholder="Required">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.homeAddressPostcode.$invalid, 'no-errors' : addNewPatientDetailsForm.homeAddressPostcode.$valid}">
+          <span class="input-label">Zip/Postal Code</span>
+          <input type="text" name="homeAddressPostcode" ng-model="newUserData.homeAddress.postCode" required
+                 placeholder="Required">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewPatientDetailsForm.homeAddressCountry.$invalid, 'no-errors' : addNewPatientDetailsForm.homeAddressCountry.$valid}">
+          <span class="input-label">Country</span>
+          <input type="text" name="homeAddressCountry" ng-model="newUserData.homeAddress.country" required
+                 placeholder="Required">
+        </label>
+
+        <div class="item item-divider item-icon-right">
+          Children
+          <i class="icon ion-android-add-circle" ng-click="addChild()"></i>
+        </div>
+        <label ng-if="newUserData.children.length == 0" class="item">
+          No children added.
+        </label>
+        <ion-list ng-if="newUserData.children.length > 0"
+                  can-swipe="true">
+          <ion-item ng-repeat="child in newUserData.children track by $index"
+                    class="item">
+            <h2>{{child.name}}</h2>
+            <span>Born: {{child.dateOfBirth | date:'dd.MM.yyyy'}}</span>
+            <span>{{child.relation}}</span>
+            <ion-option-button class="button-positive"
+                               ng-click="editChild(child)">
+              Edit
+            </ion-option-button>
+            <ion-option-button class="button-assertive"
+                               ng-click="newUserData.children.splice($index, 1)">
+              Delete
+            </ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+      <button class="button button-block button-positive" type="submit">
+        Complete Setup
+      </button>
+    </form>
+  </ion-content>
+</ion-view>

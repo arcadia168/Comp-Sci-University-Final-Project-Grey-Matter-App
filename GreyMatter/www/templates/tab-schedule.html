@@ -1,0 +1,28 @@
+<ion-view view-title="{{viewTitle}}">
+  <ion-nav-buttons side="secondary">
+    <button class="button-clear button button-icon" ng-click="toggleDeleteTasks()">
+      <i class="icon ion-ios-trash-outline"></i>
+    </button>
+    <button class="button-clear button button-icon" ng-click="addNewScheduleItem()">
+      <i class="icon ion-ios-plus-outline"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher pulling-text="Pull to fetch up to date schedule tasks..." on-refresh="refreshScheduleData()"></ion-refresher>
+    <ion-list show-delete="showDelete" can-swipe="true">
+      <ion-item class="no-padding" ng-repeat="task in currentScheduledTasks track by $index | orderBy: orderByDate">
+        <ion-checkbox ng-model="task.completedToday" ng-change="toggleTask($index)">
+          <h2>Time: {{task.time | date: 'hh:mm a'}}</h2>
+          <h2>Name: {{task.name}}</h2>
+          <p ng-if="task.details.length > 0">Details: {{task.details}}</p>
+          <p ng-if="!task.details.length"> Details: No details added</p>
+        </ion-checkbox>
+        <ion-delete-button class="ion-minus-circled" ng-click="deleteScheduledTask(task._id)">
+        </ion-delete-button>
+        <ion-option-button class="button-positive" ng-click="editScheduleTask($index)">
+          Edit
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,42 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Daily Routine Task</h1>
+  </ion-header-bar>
+  <ion-content padding="true">
+    <form name="newOrUpdatedTaskDetailsForm" novalidate="" ng-submit="closeModal(newOrUpdatedTaskDetailsForm)">
+      <div class="list">
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : newOrUpdatedTaskDetailsForm.name.$invalid, 'no-errors' : newOrUpdatedTaskDetailsForm.name.$valid}">
+          <span class="input-label">Task Name:</span>
+          <input type="text" name="name" ng-model="newOrUpdatedTask.name" required>
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : newOrUpdatedTaskDetailsForm.details.$invalid, 'no-errors' : newOrUpdatedTaskDetailsForm.details.$valid}">
+          <span class="input-label">Details (Optional)</span>
+          <input type="text" name="details" ng-model="newOrUpdatedTask.details">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : newOrUpdatedTaskDetailsForm.time.$invalid, 'no-errors' : newOrUpdatedTaskDetailsForm.time.$valid}">
+          <span class="input-label">Time of day: </span>
+          <ionic-timepicker input-obj="timePickerObject" ng-click="doNothing()">
+            <button class="button button-clear">{{newOrUpdatedTask.time | date: 'hh:mm a'}}</button>
+          </ionic-timepicker>
+          <input ng-show='false' type="text" name="time" ng-model="setTimeValidationHack" required>
+        </label>
+      </div>
+      <div class="padding">
+        <button ng-if="editingExistingTask" class="button button-full button-positive" type="submit">
+          Update Task
+        </button>
+        <button ng-if="!editingExistingTask" class="button button-full button-positive" type="submit">
+          Create New Daily Task
+        </button>
+        <button type="button" class="button button-full button-assertive" ng-click="cancelAddOrEditTask()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

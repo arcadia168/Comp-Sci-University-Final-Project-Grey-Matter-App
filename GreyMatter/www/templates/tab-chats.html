@@ -1,0 +1,13 @@
+<ion-view view-title="Chats" cache-view="false">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="carer in currentUser.connectedCarers"
+                type="item-text-wrap" href="#/tab/chats/{{carer.user_id}}">
+        <!--<img ng-src="{{carer.carer_pic}}">-->
+        <h2>{{carer.carer_name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <p ng-if="currentUser.connectedCarers.length == 0">No carers to chat to, please invite carers to use this feature.</p>
+    </ion-list>
+  </ion-content>
+</ion-view>

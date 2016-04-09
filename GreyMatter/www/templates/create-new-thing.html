@@ -1,0 +1,38 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Add Thing Details</h1>
+  </ion-header-bar>
+  <ion-content padding="true">
+    <form name="thingDetailsForm" novalidate="" ng-submit="closeModal(thingDetailsForm)">
+      <div class="list">
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : thingDetailsForm.name.$invalid, 'no-errors' : thingDetailsForm.name.$valid}">
+          <span class="input-label">Name</span>
+          <input type="text" name="name" ng-model="newThing.name" required>
+        </label>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : thingDetailsForm.location.$invalid, 'no-errors' : thingDetailsForm.location.$valid}">
+          <span class="input-label">Location</span>
+          <input type="text" name="location" ng-model="newThing.location" required>
+        </label>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : thingDetailsForm.note.$invalid, 'no-errors' : thingDetailsForm.note.$valid}">
+          <span class="input-label">Note</span>
+          <input type="text" name="note" ng-model="newThing.note">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="button" class="button button-full icon-left ion-camera button-positive" ng-click="chooseThingImage()">Add Picture</button>
+        <button ng-if="editingExistingThing" class="button button-full button-positive" type="submit">
+          Update Thing
+        </button>
+        <button ng-if="!editingExistingThing" class="button button-full button-positive" type="submit">
+          Create New Thing
+        </button>
+        <button type="button" class="button button-full button-assertive" ng-click="cancelCreateUpdateThing()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

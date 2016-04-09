@@ -1,0 +1,10 @@
+<ion-view view-title="Choose User Type" hide-back-button="true">
+  <ion-content>
+    <ion-radio ng-model="userType" ng-value="'patient'" ng-change='optionChosen(1)'>
+      <i class="icon ion-person"></i> Patient
+    </ion-radio>
+    <ion-radio ng-model="userType" ng-value="'carer'" ng-change='optionChosen(2)'>
+      <i class="icon ion-person-stalker"></i> Carer
+    </ion-radio>
+  </ion-content>
+</ion-view>

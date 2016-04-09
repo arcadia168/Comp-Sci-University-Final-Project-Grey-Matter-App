@@ -1,0 +1,51 @@
+{
+  "name": "GreyMatter",
+  "version": "1.0.0",
+  "description": "Helping sufferers of dementia stay helthier for longer.",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "***REMOVED*** ***REMOVED***",
+    "email": "***REMOVED***@***REMOVED******REMOVED***.com",
+    "url": "http://www.***REMOVED******REMOVED***.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openshift/origin-server"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect": "*",
+    "cors": "*",
+    "express": "*",
+    "moment": "*",
+    "moment-range": "*",
+    "mongodb": "^1.4.38",
+    "mongoose": "*",
+    "mongoskin": "^1.4.13",
+    "multer": "^1.1.0",
+    "q": "*",
+    "socket.io": "^1.4.5",
+    "sprintf-js": "*",
+    "underscore": "*",
+    "express-jwt": "*",
+    "express-unless": "*"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "supertest": "^1.1.0"
+  },
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js"
+}

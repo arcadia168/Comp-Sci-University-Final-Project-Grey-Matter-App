@@ -1,0 +1,28 @@
+<ion-view cache-view="false" view-title="Chat with {{chattingToTitle}}" ng-controller="ChatDetailCtrl as chatCtrl">
+  <ion-content has-bouncing="true" class="content">
+    <div>
+      <ul>
+        <li class="bubble triangle-isosceles left" ng-class="{'message':message.style,'log':!message.style}"
+            ng-repeat="message in chatCtrl.messages">
+          <!--<span class="chat-message" ng-show="message.style" ng-style="{color:message.color}">-->
+            <!--{{message.username}} :-->
+          </span>
+          &nbsp {{message.content}}
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="no-padding" ng-class="{'bar-subfooter': currentPlatform == 'ios'}">
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input class="message-input-box" type="text" placeholder="Message" send-button="chatCtrl.sendMessage()"
+                 ng-change="chatCtrl.updateTyping()"
+                 ng-model="chatCtrl.message">
+        </label>
+        <button class="button button-clear icon ion-paper-airplane button-small" ng-click="chatCtrl.sendMessage()">
+        </button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

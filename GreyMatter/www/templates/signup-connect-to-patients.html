@@ -1,0 +1,32 @@
+<ion-view view-title="Connect to a Patient" hide-back-button="true">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshCarerInvitations()"></ion-refresher>
+    <div class="item item-divider">
+      Invitations from Patients
+    </div>
+    <ion-item ng-if="currentUser.careConnectInvitations.length == 0">
+      You have no invitations to connect to a patient yet, keep refreshing the page to check for new invites.
+      To use the app as a patient, please log out and then log back in using a patient's credentials.
+    </ion-item>
+    <ion-list ng-if="currentUser.careConnectInvitations.length > 0"
+              can-swipe="true">
+      <ion-item ng-repeat="invitation in currentUser.careConnectInvitations track by $index"
+                class="item">
+        <h2>Patient: {{invitation.sender.name}}</h2>
+        <span>Invited: {{invitation.invitationIssued | date:'dd.MM.yyyy'}}</span>
+        <ion-option-button class="button-positive" ng-click="acceptInvitation(invitation)">
+          Accept
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="rejectInvitation(invitation)">
+          Reject
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <div class="padding">
+      <button class="button button-block button-assertive" ng-click="signOut()">
+        Sign out
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
+

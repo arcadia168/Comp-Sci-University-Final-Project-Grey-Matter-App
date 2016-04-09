@@ -1,0 +1,30 @@
+<ion-view view-title="Enter Your Carer Details">
+  <ion-content>
+    <form name="addNewCarerDetailsForm" novalidate="" ng-submit="updateCarerDetails(addNewCarerDetailsForm)">
+      <ion-list>
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewCarerDetailsForm.firstName.$invalid, 'no-errors' : addNewCarerDetailsForm.firstName.$valid}">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="newUserData.firstName" name="firstName" required placeholder="Required">
+        </label>
+
+        <label class="item item-input"
+               ng-class="{ 'has-errors' : addNewCarerDetailsForm.lastName.$invalid, 'no-errors' : addNewCarerDetailsForm.lastName.$valid}">
+          <span class="input-label">Last Name</span>
+          <input type="text" name="lastName" ng-model="newUserData.lastName" required placeholder="Required">
+        </label>
+
+        <!--todo: add optional picture upload here -->
+
+        <!--<label class="item item-input"-->
+               <!--ng-class="{ 'has-errors' : addNewCarerDetailsForm.dOB.$invalid, 'no-errors' : addNewCarerDetailsForm.dOB.$valid}">-->
+          <!--<span class="input-label">Date Of Birth</span>-->
+          <!--<input type="date" name="dOB" ng-model="dateOfBirth" required placeholder="Required" ngMax="maxPatientDob">-->
+        <!--</label>-->
+      </ion-list>
+      <button class="button button-block button-positive" type="submit">
+        Complete Signup
+      </button>
+    </form>
+  </ion-content>
+</ion-view>
