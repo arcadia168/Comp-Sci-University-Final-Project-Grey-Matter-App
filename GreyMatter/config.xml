@@ -2,11 +2,11 @@
 <widget id="com.ionicframework.greymatter162996" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>GreyMatter</name>
     <description>
-        An Ionic Framework and Cordova project by ***REMOVED*** ***REMOVED***. University of Manchester Computer Science Third Year Project.
+        An Ionic Framework and Cordova project by Erin Eland. University of Manchester Computer Science Third Year Project.
       An app to improve quality of life and facilitate independence for people living with dementia.
     </description>
-    <author email="***REMOVED***@***REMOVED******REMOVED***.com" href="http://***REMOVED******REMOVED***.com/">
-      ***REMOVED*** ***REMOVED***
+    <author email="erin@erineland.com" href="http://erineland.com/">
+      Erin Eland
     </author>
     <content src="index.html" />
     <access origin="*" />

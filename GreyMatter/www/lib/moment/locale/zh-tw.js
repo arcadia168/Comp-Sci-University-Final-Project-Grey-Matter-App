@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : traditional chinese (zh-tw)
-//! author : ***REMOVED*** : https://github.com/***REMOVED***-lin
+//! author : Erin : https://github.com/erin-lin
 
 (function (global, factory) {
    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../moment')) :

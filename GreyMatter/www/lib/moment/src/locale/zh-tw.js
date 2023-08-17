@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : traditional chinese (zh-tw)
-//! author : ***REMOVED*** : https://github.com/***REMOVED***-lin
+//! author : Erin : https://github.com/erin-lin
 
 import moment from '../moment';
 

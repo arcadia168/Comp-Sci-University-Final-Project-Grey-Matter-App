@@ -1,4 +1,4 @@
-# ***REMOVED*** ***REMOVED*** 3rd Year Project 
+# Erin Eland 3rd Year Project 
 ##Grey Matter 
 *An app to help improve quality of life for people living with memory impairment such as dementia or Alzheimer's disease*
 
