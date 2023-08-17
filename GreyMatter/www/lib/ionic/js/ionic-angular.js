@@ -6,7 +6,7 @@
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
- * By @maxlynch, @***REMOVED***jsperry, @adamdbradley <3
+ * By @maxlynch, @benjsperry, @adamdbradley <3
  *
  * Licensed under the MIT license. Please see LICENSE for more information.
  *
@@ -10214,7 +10214,7 @@ IonicModule
       var scrollCtrl = infiniteScrollCtrl.scrollCtrl = ctrls[0];
       var jsScrolling = infiniteScrollCtrl.jsScrolling = !scrollCtrl.isNative();
 
-      // if this view is not ***REMOVED***eath a scrollCtrl, it can't be injected, proceed w/ native scrolling
+      // if this view is not beneath a scrollCtrl, it can't be injected, proceed w/ native scrolling
       if (jsScrolling) {
         infiniteScrollCtrl.scrollView = scrollCtrl.scrollView;
         $scope.scrollingType = 'js-scrolling';
@@ -11441,7 +11441,7 @@ IonicModule
  * As a user navigates throughout your app, Ionic is able to keep track of their
  * navigation history. By knowing their history, transitions between views
  * correctly enter and exit using the platform's transition style. An additional
- * ***REMOVED***efit to Ionic's navigation system is its ability to manage multiple
+ * benefit to Ionic's navigation system is its ability to manage multiple
  * histories. For example, each tab can have it's own navigation history stack.
  *
  * Ionic uses the AngularUI Router module so app interfaces can be organized
@@ -11658,7 +11658,7 @@ IonicModule
       });
     });
 
-    // Hack for iOS Safari's ***REMOVED***efit. It goes searching for onclick handlers and is liable to click
+    // Hack for iOS Safari's benefit. It goes searching for onclick handlers and is liable to click
     // something else nearby.
     element.onclick = noop;
   };

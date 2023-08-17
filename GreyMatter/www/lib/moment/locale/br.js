@@ -76,7 +76,7 @@
             sameElse : 'L'
         },
         relativeTime : {
-            future : 'a-***REMOVED***n %s',
+            future : 'a-benn %s',
             past : '%s \'zo',
             s : 'un nebeud segondennoù',
             m : 'ur vunutenn',

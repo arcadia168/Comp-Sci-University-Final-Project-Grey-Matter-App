@@ -25,7 +25,7 @@
     "passwordPlaceholder":         "Kodeord",
     "separatorText":               "eller",
     "serverErrorText":             "Der opstod en fejl under login.",
-    "returnUserLabel":             "Ved sidste log ind ***REMOVED***yttede du...",
+    "returnUserLabel":             "Ved sidste log ind benyttede du...",
     "domainUserLabel":             "Du er forbundet fra din virksomheds netværk...",
     "wrongEmailPasswordErrorText": "Forkert email eller password.",
     "or":                          "... eller log ind med",

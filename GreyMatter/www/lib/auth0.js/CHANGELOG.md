@@ -209,7 +209,7 @@
 
 - Add `.startPasswordless()` method and warn deprecation of `.requestSMSCode()` (@gnandretta)
   https://github.com/auth0/auth0.js/commit/cdc4b2982ab0f22bd27fa0beb4a9657517f0117d
-- Add client version and lib name on authentication requests (@***REMOVED***schwarz)
+- Add client version and lib name on authentication requests (@benschwarz)
 
 ## [6.4.2] - 2015-05-18
 

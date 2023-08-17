@@ -686,7 +686,7 @@
     });
 
     //! moment.js locale configuration
-    //! locale : ***REMOVED***gali (bn)
+    //! locale : Bengali (bn)
     //! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 
     var bn__symbolMap = {
@@ -765,7 +765,7 @@
         isPM: function (input) {
             return /^(দুপুর|বিকেল|রাত)$/.test(input);
         },
-        //***REMOVED***gali is a vast language its spoken
+        //Bengali is a vast language its spoken
         //in different forms in various parts of the world.
         //I have just generalized with most common one used
         meridiem : function (hour, minute, isLower) {
@@ -957,7 +957,7 @@
             sameElse : 'L'
         },
         relativeTime : {
-            future : 'a-***REMOVED***n %s',
+            future : 'a-benn %s',
             past : '%s \'zo',
             s : 'un nebeud segondennoù',
             m : 'ur vunutenn',
@@ -1184,7 +1184,7 @@
     //! locale : czech (cs)
     //! author : petrbela : https://github.com/petrbela
 
-    var cs__months = 'leden_únor_březen_du***REMOVED***_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split('_'),
+    var cs__months = 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split('_'),
         cs__monthsShort = 'led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro'.split('_');
     function cs__plural(n) {
         return (n > 1) && (n < 5) && (~~(n / 10) !== 1);
@@ -2074,7 +2074,7 @@
     //! author : Eneko Illarramendi : https://github.com/eillarra
 
     var eu = moment.defineLocale('eu', {
-        months : 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_a***REMOVED***dua'.split('_'),
+        months : 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split('_'),
         monthsShort : 'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split('_'),
         weekdays : 'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split('_'),
         weekdaysShort : 'ig._al._ar._az._og._ol._lr.'.split('_'),
@@ -3439,7 +3439,7 @@
         },
         calendar : {
             sameDay : '[Dinten puniko pukul] LT',
-            nextDay : '[M***REMOVED***jang pukul] LT',
+            nextDay : '[Mbenjang pukul] LT',
             nextWeek : 'dddd [pukul] LT',
             lastDay : '[Kala wingi pukul] LT',
             lastWeek : 'dddd [kepengker pukul] LT',

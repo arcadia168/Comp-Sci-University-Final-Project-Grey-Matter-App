@@ -50,7 +50,7 @@
         },
         calendar : {
             sameDay : '[Dinten puniko pukul] LT',
-            nextDay : '[M***REMOVED***jang pukul] LT',
+            nextDay : '[Mbenjang pukul] LT',
             nextWeek : 'dddd [pukul] LT',
             lastDay : '[Kala wingi pukul] LT',
             lastWeek : 'dddd [kepengker pukul] LT',

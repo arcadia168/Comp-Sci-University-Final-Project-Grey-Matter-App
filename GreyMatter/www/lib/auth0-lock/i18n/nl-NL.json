@@ -44,7 +44,7 @@
     "passwordPlaceholder": "Nieuw wachtwoord",
     "repeatPasswordPlaceholder": "Bevestig het nieuwe wachtwoord",
     "cancelAction": "Annuleren",
-    "successText": "We heb***REMOVED*** u zojuist een e-mail gestuurd om uw wachtwoord te resetten.",
+    "successText": "We hebben u zojuist een e-mail gestuurd om uw wachtwoord te resetten.",
     "enterSamePasswordText": "Voer hetzelfde wachtwoord in.",
     "headerText": "Voer uw e-mailadres en het nieuwe wachtwoord in. Wij sturen u een e-mail ter bevestiging van de wachtwoordswijziging.",
     "serverErrorText": "Er is een fout opgetreden bij de verwerking van het nieuwe wachtwoord."

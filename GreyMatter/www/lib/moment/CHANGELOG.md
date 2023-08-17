@@ -15,7 +15,7 @@ Important changes:
 * [#2438](https://github.com/moment/moment/pull/2438) Fix inconsistent moment.min and moment.max results
   Return invalid result if any of the inputs is invalid
 * [#2494](https://github.com/moment/moment/pull/2494) Fix two digit year parsing with YYYY format
-  This brings the ***REMOVED***efits of YY to YYYY
+  This brings the benefits of YY to YYYY
 * [#2368](https://github.com/moment/moment/pull/2368) perf: use faster form of copying dates, across the board improvement
 
 
@@ -126,7 +126,7 @@ Minor bugfixes:
 
 * new languages
 
-  * [#1678](https://github.com/moment/moment/issues/1678) ***REMOVED***gali (bn)
+  * [#1678](https://github.com/moment/moment/issues/1678) Bengali (bn)
   * [#1628](https://github.com/moment/moment/issues/1628) Azerbaijani (az)
   * [#1633](https://github.com/moment/moment/issues/1633) Arabic, Saudi Arabia (ar-sa)
   * [#1648](https://github.com/moment/moment/issues/1648) Austrian German (de-at)

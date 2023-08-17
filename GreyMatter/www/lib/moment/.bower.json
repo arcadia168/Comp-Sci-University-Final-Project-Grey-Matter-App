@@ -3,7 +3,7 @@
   "main": "moment.js",
   "ignore": [
     "**/.*",
-    "***REMOVED***chmarks",
+    "benchmarks",
     "bower_components",
     "meteor",
     "node_modules",
